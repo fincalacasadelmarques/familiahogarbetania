@@ -21,7 +21,7 @@ Es una web estática hecha a mano con HTML, CSS y un poco de JavaScript. No nece
 
 - **Textos**: abre el `.html` de la página y cambia el texto entre las etiquetas (`<p>…</p>`, `<h2>…</h2>`).
 - **Fotos**: están en `img/`. Para cambiar una foto, sube otra con **el mismo nombre** (por ejemplo `img/familia.jpg`). Conviene que pese menos de 400 KB (unos 1600 px de ancho).
-- **Vídeo de la portada**: `video/finca-dron.mp4` (máximo 25 MB; mejor menos de 8 MB).
+- **Vídeo de la portada**: `video/finca-portada.mp4` (fragmento estabilizado de los vídeos de dron; mientras carga se ve `img/portada-video.jpg`) (máximo 25 MB; mejor menos de 8 MB).
 - **Colores y tipografías**: al principio de `css/estilos.css`, en `:root`.
 - **Menú y pie de página**: se repiten en todas las páginas. Si añades o quitas una sección del menú, cámbiala en cada `.html`.
 - **Teléfono, correo, Instagram**: busca y reemplaza `679257317`, `familiahogarbetania@gmail.com` o `instagram.com/familiahogarbetania` en todos los archivos.
