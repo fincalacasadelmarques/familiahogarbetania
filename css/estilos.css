@@ -311,3 +311,32 @@ form.formulario { display: grid; gap: 1.1rem; background: #fff; padding: clamp(1
 }
 .whatsapp-flotante:hover { background: #17924A; color: #fff; }
 .whatsapp-flotante svg { width: 30px; height: 30px; }
+
+/* ---------- Mapa integrado ---------- */
+.mapa { margin: 0 0 2rem; }
+.mapa iframe { width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--linea); border-radius: 18px; display: block; background: var(--salvia); }
+.mapa figcaption { font-size: .85rem; color: var(--gris); margin-top: .5rem; }
+
+/* ---------- Galería ampliable ---------- */
+.ampliable { cursor: zoom-in; }
+.visor {
+  position: fixed; inset: 0; z-index: 100; background: rgba(12, 18, 14, .94);
+  display: none; align-items: center; justify-content: center; padding: 3.5rem 3.5rem 4.5rem;
+}
+.visor.abierto { display: flex; }
+.visor img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,.4); }
+.visor p { position: absolute; left: 0; right: 0; bottom: 1.2rem; text-align: center; color: #E9ECE7; font-size: .95rem; margin: 0; padding: 0 4rem; }
+.visor button {
+  position: absolute; background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.35);
+  width: 48px; height: 48px; border-radius: 50%; font-size: 1.6rem; line-height: 1; cursor: pointer; display: grid; place-items: center;
+}
+.visor button:hover { background: rgba(255,255,255,.25); }
+.visor .cerrar { top: 1rem; right: 1rem; }
+.visor .anterior { left: 1rem; top: 50%; transform: translateY(-50%); }
+.visor .siguiente { right: 1rem; top: 50%; transform: translateY(-50%); }
+@media (max-width: 600px) {
+  .visor { padding: 4rem .5rem 5rem; }
+  .visor .anterior, .visor .siguiente { top: auto; bottom: 3.2rem; transform: none; }
+}
+body.sin-scroll { overflow: hidden; }
+.visor button[hidden] { display: none; }
