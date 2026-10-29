@@ -1,0 +1,10 @@
+# Configuración de Cloudflare Pages (proyecto familiahogarbetania)
+name = "familiahogarbetania"
+pages_build_output_dir = "."
+compatibility_date = "2026-06-01"
+
+# Base de datos donde se guarda una copia de cada mensaje del formulario
+[[d1_databases]]
+binding = "DB"
+database_name = "familiahogarbetania-mensajes"
+database_id = "3cc4d62f-9d61-47c8-bf76-4f25d63fe698"
