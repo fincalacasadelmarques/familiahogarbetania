@@ -313,8 +313,8 @@ form.formulario { display: grid; gap: 1.1rem; background: #fff; padding: clamp(1
 .whatsapp-flotante svg { width: 30px; height: 30px; }
 
 /* ---------- Mapa integrado ---------- */
-.mapa { margin: 0 0 2rem; }
-.mapa iframe { width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--linea); border-radius: 18px; display: block; background: var(--salvia); }
+.mapa { margin: 0; }
+.mapa iframe { width: 100%; aspect-ratio: 16 / 7; min-height: 320px; border: 1px solid var(--linea); border-radius: 18px; display: block; background: var(--salvia); }
 .mapa figcaption { font-size: .85rem; color: var(--gris); margin-top: .5rem; }
 
 /* ---------- Galería ampliable ---------- */
