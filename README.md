@@ -44,7 +44,8 @@ La configuración de la base de datos está en `wrangler.toml`.
 
 - Código: GitHub (cuenta de fincalacasadelmarques@gmail.com).
 - Alojamiento: Cloudflare Pages (proyecto `familiahogarbetania`), conectado al repositorio. Sin comando de compilación; carpeta de salida: `/`.
-- Dirección provisional: https://familiahogarbetania.pages.dev. Cuando se compre `familiahogarbetania.com`, añádelo en Cloudflare (Workers & Pages → familiahogarbetania → Custom domains) y cambia `familiahogarbetania.pages.dev` por `familiahogarbetania.com` en los `.html`, `robots.txt` y `sitemap.xml`.
+- Dominio: https://familiahogarbetania.com (registrado en Cloudflare, renovación automática). `www.familiahogarbetania.com` y `familiahogarbetania.pages.dev` redirigen al dominio principal (`functions/_middleware.js`).
+- Google: datos estructurados (schema.org) en `index.html`, `sitemap.xml` y `robots.txt`.
 
 ## Licencia
 
