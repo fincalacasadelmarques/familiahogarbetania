@@ -36,7 +36,7 @@ La función:
 1. Guarda una copia de cada mensaje en la base de datos D1 `familiahogarbetania-mensajes` (tabla `mensajes`). Se puede consultar en Cloudflare → Storage & databases → D1 → familiahogarbetania-mensajes → Console, con `SELECT * FROM mensajes ORDER BY id DESC;`.
 2. Lo reenvía por correo a `familiahogarbetania@gmail.com` mediante [Resend](https://resend.com) (gratuito hasta 3.000 correos al mes). Necesita la variable secreta `RESEND_API_KEY` en Cloudflare → Workers & Pages → familiahogarbetania → Settings → Variables and Secrets (entorno Production). La cuenta de Resend debe estar creada con `familiahogarbetania@gmail.com`: sin dominio propio, Resend solo deja enviar al correo del titular de la cuenta. La columna `correo_enviado` indica si el reenvío funcionó y `error` el motivo si no. Los mensajes que no se pudieron enviar se reenvían solos con el siguiente envío correcto.
    - Cuando se compre `familiahogarbetania.com`, se puede verificar el dominio en Resend y añadir la variable `CORREO_REMITENTE` (por ejemplo `Web Hogar Betania <web@familiahogarbetania.com>`).
-3. Muestra `gracias.html` al visitante.
+3. Muestra `/gracias` al visitante.
 
 La configuración de la base de datos está en `wrangler.toml`.
 
@@ -50,3 +50,7 @@ La configuración de la base de datos está en `wrangler.toml`.
 ## Licencia
 
 El código se publica con licencia MIT (ver `LICENSE`). Los textos, fotografías, vídeos y el logotipo pertenecen a la Asociación Hogar Betania y no están incluidos en esa licencia.
+
+## Enlaces internos
+
+Los enlaces entre páginas usan direcciones limpias, sin `.html` (`/asociacion`, `/contacto`, `/` para el inicio). Cloudflare Pages redirige `asociacion.html` → `/asociacion`; si se enlaza con `.html`, Google encuentra esas redirecciones y Search Console avisa de «Página con redirección». Al añadir una página nueva, enlázala así y añádela a `sitemap.xml`.

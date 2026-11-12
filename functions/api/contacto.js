@@ -12,7 +12,7 @@
  *      la clave guardada en Cloudflare como variable secreta RESEND_API_KEY.
  *      Si la clave no está configurada, el mensaje queda guardado en D1 y se
  *      reenvía automáticamente en cuanto el correo vuelva a funcionar.
- *   3. Redirige al visitante a /gracias.html.
+ *   3. Redirige al visitante a /gracias.
  */
 
 const DESTINO = "familiahogarbetania@gmail.com";
@@ -24,11 +24,11 @@ export async function onRequestPost({ request, env }) {
   try {
     datos = await request.formData();
   } catch {
-    return redirigir(request, "/contacto.html?error=1");
+    return redirigir(request, "/contacto?error=1");
   }
 
   // Trampa para robots: este campo está oculto y las personas lo dejan vacío
-  if (limpiar(datos.get("_honey"), 100)) return redirigir(request, "/gracias.html");
+  if (limpiar(datos.get("_honey"), 100)) return redirigir(request, "/gracias");
 
   const m = {
     nombre: limpiar(datos.get("nombre"), 120),
@@ -39,7 +39,7 @@ export async function onRequestPost({ request, env }) {
   };
   const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m.email);
   if (!m.nombre || !emailValido || !m.mensaje || !datos.get("acepta_privacidad")) {
-    return redirigir(request, "/contacto.html?error=1");
+    return redirigir(request, "/contacto?error=1");
   }
 
   // 1. Guardar copia
@@ -75,8 +75,8 @@ export async function onRequestPost({ request, env }) {
   }
 
   // Si no se pudo guardar ni enviar, avisar al visitante para que use otra vía
-  if (!id && enviado !== "sí") return redirigir(request, "/contacto.html?error=1");
-  return redirigir(request, "/gracias.html");
+  if (!id && enviado !== "sí") return redirigir(request, "/contacto?error=1");
+  return redirigir(request, "/gracias");
 }
 
 function redirigir(request, ruta) {

@@ -52,7 +52,7 @@ document.querySelectorAll('[data-anio]').forEach(function (el) {
     if (aviso) aviso.hidden = false;
   }
 
-  // Envío normal del formulario a /api/contacto (que redirige a gracias.html)
+  // Envío normal del formulario a /api/contacto (que redirige a /gracias)
   form.addEventListener('submit', function () {
     var boton = form.querySelector('button[type="submit"]');
     boton.disabled = true;
